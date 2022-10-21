@@ -1,8 +1,8 @@
 const app = require("./app.js");
 var port = 4000;
 const mongo = require("./database");
-const rutasCotizacion = require("./src/routers/Cot.routes");
-const rutasEnvio = require("./src/routers/Env.routes");
+const rutasAdm = require("./src/routers/Adm.routes");
+const rutasOrd = require("./src/routers/Ord.routes");
 const rutasProducto = require("./src/routers/Prod.routes");
 
 app.listen(port, () =>{
@@ -15,6 +15,6 @@ app.get('/', (req, res) =>{
 
 //config rutas
 
-app.use("/Cotizacion", rutasCotizacion);
-app.use("/EnvioInfo", rutasEnvio);
+app.use("/Adm", rutasAdm);
+app.use("/Orden", rutasOrd);
 app.use("/Productos", rutasProducto);
